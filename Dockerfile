@@ -1,9 +1,9 @@
-FROM postgres:10-alpine
+FROM postgres:11-alpine
 MAINTAINER Jonatan Heyman <http://heyman.info>
 
 # Install dependencies
 RUN apk update && apk add --no-cache --virtual .build-deps && apk add \
-    bash make curl openssh git 
+    bash make curl openssh git
 
 # Install aws-cli
 RUN apk -Uuv add groff less python py-pip && pip install awscli
